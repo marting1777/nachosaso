@@ -1,0 +1,13 @@
+.NoMatch {
+    text-align: center;
+}
+
+.NoMatch a {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.NoMatchTitle {
+    text-align: center;
+    color: green;
+}

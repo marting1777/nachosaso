@@ -6,3 +6,9 @@
     color: #FFFFFF;
     text-decoration: none;
 }
+
+
+.NavList a:hover, 
+.NavList a:active {
+    color: orangered;
+}
