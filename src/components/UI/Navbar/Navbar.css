@@ -1,0 +1,11 @@
+.LinksList {
+    list-style: none;
+    display: inline-flex;
+    margin: 0;
+    position: absolute;
+    right: 0;
+}
+
+.Title {
+    padding-left: 20px;
+}
