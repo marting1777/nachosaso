@@ -18,7 +18,7 @@ class NavBar extends Component {
             {id: 3, name: 'HITOS', link: '/hitos'},
             {id: 4, name: 'SOBRE MI', link: '/sobre-mi'},
             {id: 5, name: 'CONTENIDO & REDES', link: '/contenido-y-redes'},
-            {id: 6, name: 'RECUSOS', link: '/recursos'},
+            {id: 6, name: 'RECURSOS', link: '/recursos'},
         ]
     }
 
