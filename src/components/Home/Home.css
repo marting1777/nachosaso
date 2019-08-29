@@ -1,0 +1,27 @@
+.HomeSection {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    background-position: center;
+    width: 100%;
+    display: table;
+    position: relative;
+}
+
+.TitlePosition {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.Title {
+    text-align: center;
+    margin: 0;
+    font-size: 54px;
+    color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .Title {
+        font-size: 70px;
+    }
+}
