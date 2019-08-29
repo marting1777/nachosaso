@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import classes from './Navbar.css'
 
 import AppBar from '@material-ui/core/AppBar'
@@ -35,10 +36,10 @@ class NavBar extends Component {
         return (
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton edge="start" color="inherit" aria-label="menu">
-                        <MenuIcon />
+                    <IconButton className={classes.BurgerIcon} edge="start" color="inherit" aria-label="menu">
+                        <MenuIcon onClick={this.props.drawerClickedHandler}/>
                     </IconButton>
-                    <Title titleClass={classes.Title} title="NACHO SASO"/>
+                    <Link className={classes.TitleLink} to="/"><Title titleClass={classes.Title} title="NACHO SASO"/></Link>
                     <ul className={classes.LinksList}>
                         {navLinks}
                     </ul>

@@ -1,11 +1,25 @@
 .LinksList {
     list-style: none;
-    display: inline-flex;
     margin: 0;
     position: absolute;
     right: 0;
+    display: none;
 }
 
 .Title {
-    padding-left: 20px;
+    color: #FFFFFF;
+}
+
+.TitleLink {
+    text-decoration: none;
+    
+}
+
+@media (min-width: 768px) {
+    .BurgerIcon {
+        display: none !important;
+    }
+    .LinksList {
+        display: inline-flex;
+    }
 }

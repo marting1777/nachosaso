@@ -3,6 +3,8 @@ import classes from './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/UI/Navbar/Navbar'
+import SideDrawer from './components/UI/SideDrawer/SideDrawer'
+import Backdrop from './components/UI/Backdrop/Backdrop'
 import Home from './components/Home/Home'
 import ElProyecto from './components/ElProyecto/ElProyecto'
 import Hitos from './components/Hitos/Hitos'
@@ -12,11 +14,35 @@ import Recursos from './components/Recursos/Recursos'
 import NoMatch from './components/NoMatch/NoMatch'
 
 class App extends Component {
+
+    state = {
+        sideDrawerOpen: false
+    }
+
+    drawerToggleClickHandler = () => {
+        this.setState((prevState) => {
+            return {sideDrawerOpen: !prevState.sideDrawerOpen}
+        })
+    }
+
+    backdropClickedHandler = () => {
+        this.setState({sideDrawerOpen: false})
+    }
+
     render () {
+        let backdrop
+        if (this.state.sideDrawerOpen) {
+            backdrop = <Backdrop click={this.backdropClickedHandler}/>
+        }
+
         return (
             <Router>
                 <div className={classes.App}>
-                    <Navbar />
+                    <Navbar drawerClickedHandler={this.drawerToggleClickHandler}/>
+                    <SideDrawer 
+                        show={this.state.sideDrawerOpen} 
+                        click={this.backdropClickedHandler}/>
+                    {backdrop}
                     <Switch>
                         <Route path="/recursos" exact component={Recursos}/>
                         <Route path="/contenido-y-redes" exact component={ContenidoYRedes}/>
