@@ -1,3 +1,33 @@
 .SobreMi {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.Name {
+    font-size: 54px;
+}
+
+.Text1, .Text2, .Text3, .Text4 {
+    font-size: 22px;
+}
+
+.HistoriaTitle {
+    text-transform: uppercase;
+    font-size: 54px;
+    color: #FFFFFF;
+    text-shadow: 3px 3px #000000;
+}
+
+.Frase {
     
+}
+
+@media (min-width: 768px) {
+    .Name, .HistoriaTitle {
+        font-size: 76px;
+    }
+    .Text1, .Text2, .Text3, .Text4 {
+        font-size: 30px;
+    }
 }
