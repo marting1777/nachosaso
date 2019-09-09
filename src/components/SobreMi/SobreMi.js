@@ -29,9 +29,9 @@ class SobreMi extends Component {
                         <Grid item xs={12} sm={6}>
                             <Title titleClass={classes.Name} title={this.state.name} />
                             <p className={classes.Text1}>{this.state.text1}</p>
-                            <p className={classes.Text1}>{this.state.text2}</p>
-                            <p className={classes.Text1}>{this.state.text3}</p>
-                            <p className={classes.Text1}>{this.state.text4}</p>
+                            <p className={classes.Text2}>{this.state.text2}</p>
+                            <p className={classes.Text3}>{this.state.text3}</p>
+                            <p className={classes.Text4}>{this.state.text4}</p>
                         </Grid>
                     </Grid>
                 </Container>
