@@ -10,6 +10,7 @@ import ElProyecto from './components/ElProyecto/ElProyecto'
 import Hitos from './components/Hitos/Hitos'
 import SobreMi from './components/SobreMi/SobreMi'
 import ContenidoYRedes from './components/ContenidoYRedes/ContenidoYRedes'
+import Blog from './components/Blog/Blog'
 import Recursos from './components/Recursos/Recursos'
 import NoMatch from './components/NoMatch/NoMatch'
 
@@ -47,6 +48,7 @@ class App extends Component {
                         <Route path="/recursos" exact component={Recursos}/>
                         <Route path="/contenido-y-redes" exact component={ContenidoYRedes}/>
                         <Route path="/sobre-mi" exact component={SobreMi}/>
+                        <Route path="/blog" exact component={Blog}/>
                         <Route path="/hitos" exact component={Hitos}/>
                         <Route path="/el-proyecto" exact component={ElProyecto}/>
                         <Route path="/" exact component={Home}/>

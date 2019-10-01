@@ -18,8 +18,9 @@ class NavBar extends Component {
             {id: 2, name: 'EL PROYECTO', link: '/el-proyecto'},
             {id: 3, name: 'HITOS', link: '/hitos'},
             {id: 4, name: 'SOBRE MI', link: '/sobre-mi'},
-            {id: 5, name: 'CONTENIDO & REDES', link: '/contenido-y-redes'},
-            {id: 6, name: 'RECURSOS', link: '/recursos'},
+            {id: 5, name: 'BLOG', link: '/blog'},
+            {id: 6, name: 'CONTENIDO & REDES', link: '/contenido-y-redes'},
+            {id: 7, name: 'RECURSOS', link: '/recursos'},
         ]
     }
 
