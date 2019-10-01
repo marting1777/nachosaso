@@ -8,7 +8,6 @@
 }
 
 
-.NavList a:hover, 
-.NavList a:active {
+.NavList a:hover {
     color: orangered;
 }

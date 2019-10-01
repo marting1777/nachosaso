@@ -1,6 +1,7 @@
 .HomeSection {
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 80vh;
     background-position: center;
     width: 100%;

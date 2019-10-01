@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import classes from './NavList.css'
 
 const navList = props => {
     return (
-        <li className={classes.NavList}><Link to={props.urlLink}>{props.name}</Link></li>
+        <li className={classes.NavList}>
+            <NavLink activeStyle={{color: 'orangered'}} to={props.urlLink}>{props.name}</NavLink>
+        </li>
     )
 }
 

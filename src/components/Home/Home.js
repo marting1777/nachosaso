@@ -69,8 +69,6 @@ class Home extends Component {
                             <p className={classes.VisionText}>{this.state.main.visionText}</p>
                         </div>
 
-                        <hr></hr>
-
                         <Grid container>
                             {cardList}
                         </Grid>

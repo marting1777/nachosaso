@@ -1,0 +1,24 @@
+.Banner {
+    height: 60vh;
+    width: 100%;
+    display: table;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.TableDisplay {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.Title {
+    text-align: center;
+    margin: 0;
+    font-size: 54px;
+    color: #FFFFFF;
+    text-shadow: 2px 2px #000;
+    text-transform: uppercase;
+}
+
