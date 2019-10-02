@@ -19,12 +19,18 @@ const cardWithImageTop = props => {
                     alt={props.title}
                 />
                 <CardContent>
-                    <h5 className={classes.CardTitle}>{props.title}</h5>
-                    <p className={classes.CardParagraph}>{props.text}</p>
+                    {props.title ?
+                        <h5 className={classes.CardTitle}>{props.title}</h5>
+                    : null}
+                    {props.text ? 
+                        <p className={classes.CardParagraph}>{props.text}</p>
+                    : null}
                 </CardContent>
-                <Link className={classes.LinkStyle} to={props.linkUrl}>
-                    Ver Más
-                </Link>
+                {props.linkUrl ?
+                    <Link className={classes.LinkStyle} to={props.linkUrl}>
+                        Ver Más
+                    </Link>
+                : null}
             </Card>
         </Grid>
     )
