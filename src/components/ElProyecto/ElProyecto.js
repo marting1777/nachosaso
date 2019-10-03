@@ -7,6 +7,7 @@ import Tabs from '../UI/Tabs/Tabs'
 
 import CardEtapa from '../UI/CardWithImageTop/CardWithImageTop'
 import ElProyectoPortada from '../../assets/images/elproyecto.jpg'
+import { Grid } from '@material-ui/core'
 
 class ElProyecto extends Component {
 
@@ -79,6 +80,62 @@ class ElProyecto extends Component {
                     image: ElProyectoPortada
                 },
             },
+            cuatro: {
+                laRioja: {
+                    id: 1,
+                    title: 'La Rioja',
+                    image: ElProyectoPortada
+                },
+                sanJuan: {
+                    id: 2,
+                    title: 'San Juan',
+                    image: ElProyectoPortada
+                },
+                sanLuis: {
+                    id: 3,
+                    title: 'San Luis',
+                    image: ElProyectoPortada
+                },
+            },
+            cinco: {
+                mendoza: {
+                    id: 1,
+                    title: 'Mendoza',
+                    image: ElProyectoPortada
+                },
+                neuquen: {
+                    id: 2,
+                    title: 'Neuquén',
+                    image: ElProyectoPortada
+                },
+                rioNegro: {
+                    id: 3,
+                    title: 'Rio Negro',
+                    image: ElProyectoPortada
+                },
+            },
+            seis: {
+                chubut: {
+                    id: 1,
+                    title: 'Chubut',
+                    image: ElProyectoPortada
+                },
+                santaCruz: {
+                    id: 2,
+                    title: 'Santa Cruz',
+                    image: ElProyectoPortada
+                },
+                tierraDelFuego: {
+                    id: 3,
+                    title: 'Tierra Del Fuego',
+                    image: ElProyectoPortada
+                },
+                antartidaArgentina: {
+                    id: 4,
+                    title: 'Antartida Argentina',
+                    image: ElProyectoPortada
+                },
+            },
         },
     }
 
@@ -108,6 +165,30 @@ class ElProyecto extends Component {
                     imageUrl={card.image}/>
         })
 
+        const cardsEtapaCuatro = Object.values(this.state.etapas.cuatro)
+        const cardsCuatro = cardsEtapaCuatro.map(card => {
+            return <CardEtapa 
+                    key={card.id} 
+                    title={card.title}
+                    imageUrl={card.image}/>
+        })
+
+        const cardsEtapaCinco = Object.values(this.state.etapas.cinco)
+        const cardsCinco = cardsEtapaCinco.map(card => {
+            return <CardEtapa 
+                    key={card.id} 
+                    title={card.title}
+                    imageUrl={card.image}/>
+        })
+
+        const cardsEtapaSeis = Object.values(this.state.etapas.seis)
+        const cardsSeis = cardsEtapaSeis.map(card => {
+            return <CardEtapa 
+                    key={card.id} 
+                    title={card.title}
+                    imageUrl={card.image}/>
+        })
+
         return (
             <div className={classes.ElProyecto}>
                 <Banner bannerStyles={classes.Banner} style={{backgroundImage: `url('${ElProyectoPortada}')`}}>
@@ -117,13 +198,34 @@ class ElProyecto extends Component {
                 </Banner>
                 <Tabs>
                     <div label="Etapa 1">
-                        {cardsUno}
+                        <Grid container>
+                            {cardsUno}
+                        </Grid>
                     </div>
                     <div label="Etapa 2">
-                        {cardsDos}
+                        <Grid container>
+                            {cardsDos}
+                        </Grid>
                     </div>
                     <div label="Etapa 3">
-                        {cardsTres}
+                        <Grid container>
+                            {cardsTres}
+                        </Grid>
+                    </div>
+                    <div label="Etapa 4">
+                        <Grid container>
+                            {cardsCuatro}
+                        </Grid>
+                    </div>
+                    <div label="Etapa 5">
+                        <Grid container>
+                            {cardsCinco}
+                        </Grid>
+                    </div>
+                    <div label="Etapa 6">
+                        <Grid container>
+                            {cardsSeis}
+                        </Grid>
                     </div>
                 </Tabs>
             </div>
