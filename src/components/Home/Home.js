@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from './Home.css'
+import styled from 'styled-components'
 
 import ArgentinSinAtajos from '../../assets/images/sin-atajos-portada.jpg'
 import ElProyetoImg from '../../assets/images/elproyecto.jpg'
@@ -54,26 +54,65 @@ class Home extends Component {
                         imageUrl={card.image} />
         })
 
-        return (
-            <div className={classes.Home}>
-                <section className={classes.HomeSection} style={{backgroundImage: `url(${ArgentinSinAtajos})`}}>
-                    <div className={classes.TitlePosition}>
-                        <Title titleClass={classes.Title} title={this.state.main.mainTitle}/>
-                    </div>
-                </section>
+        const HomeSection = styled.section `
+            background-image: url(${ArgentinSinAtajos});
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 80vh;
+            background-position: center;
+            width: 100%;
+            display: table;
+            position: relative;
+        `
 
-                <section className={classes.Vision}>
+        const TitlePosition = styled.div `
+            display: table-cell;
+            vertical-align: middle;
+        `
+
+        const Vision = styled.section `
+            margin-top: 12px;
+            @media (min-width: 768px) {
+                padding: 50px 0;
+            }
+        `
+
+        const VisionContainer = styled.div `
+            padding-top: 30px;
+        `
+
+        const VisionText = styled.p `
+            position: relative;
+            top: -88px;
+            font-size: 22px;
+            letter-spacing: 0px;
+            @media (min-width: 768px) {
+                font-size: 30px;
+                top: -123px;
+            }
+        `
+
+        return (
+            <div>
+                <HomeSection>
+                    <TitlePosition>
+                        <Title titleClass="title" title={this.state.main.mainTitle}/>
+                    </TitlePosition>
+                </HomeSection>
+
+                <Vision>
                     <Container>
-                        <div className={classes.VisionContainer}>
-                            <Title titleClass={classes.TitleVision} title={this.state.main.visionTitle}/>
-                            <p className={classes.VisionText}>{this.state.main.visionText}</p>
-                        </div>
+                        <VisionContainer>
+                            <Title titleClass="title-vision" title={this.state.main.visionTitle}/>
+                            <VisionText>{this.state.main.visionText}</VisionText>
+                        </VisionContainer>
 
                         <Grid container>
                             {cardList}
                         </Grid>
                     </Container>
-                </section>
+                </Vision>
             </div>
         )
     }

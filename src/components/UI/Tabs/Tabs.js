@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from './Tabs.css'
+import styled from 'styled-components'
 
 import Tab from './Tab/Tab'
 
@@ -19,6 +19,15 @@ class Tabs extends Component {
 
     render () {
 
+        const TabContent = styled.div `
+            text-align: center;
+        `
+
+        const TabList = styled.ol `
+            border-bottom: 1px solid #ccc;
+            padding-left: 0;
+        `
+
         const {
             onClickTabItem,
             props: {
@@ -30,8 +39,8 @@ class Tabs extends Component {
         } = this
 
         return (
-            <div className={classes.Tabs}>
-                <ol className={classes.TabList}>
+            <div>
+                <TabList>
                     {children.map(child => {
                         const { label } = child.props
 
@@ -43,13 +52,13 @@ class Tabs extends Component {
                                 onClick={onClickTabItem}/>
                         )
                     })}
-                </ol>
-                <div className={classes.TabContent}>
+                </TabList>
+                <TabContent>
                     {children.map(child => {
                         if (child.props.label !== activeTab) return undefined
                         return child.props.children
                     })}
-                </div>
+                </TabContent>
             </div>
         )
     }

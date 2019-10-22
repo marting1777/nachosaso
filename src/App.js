@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import classes from './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import styled from 'styled-components'
 
 import Navbar from './components/UI/Navbar/Navbar'
 import SideDrawer from './components/UI/SideDrawer/SideDrawer'
@@ -31,6 +31,13 @@ class App extends Component {
     }
 
     render () {
+
+        const AppContainer = styled.div `
+            font-family: 'Titillium Web', sans-serif;
+            height: 100%;
+            font-size: 18px;
+        `
+
         let backdrop
         if (this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={this.backdropClickedHandler}/>
@@ -38,7 +45,7 @@ class App extends Component {
 
         return (
             <Router>
-                <div className={classes.App}>
+                <AppContainer>
                     <Navbar drawerClickedHandler={this.drawerToggleClickHandler}/>
                     <SideDrawer 
                         show={this.state.sideDrawerOpen} 
@@ -54,7 +61,7 @@ class App extends Component {
                         <Route path="/" exact component={Home}/>
                         <Route component={NoMatch}/>
                     </Switch>
-                </div>
+                </AppContainer>
             </Router>
         )
     }

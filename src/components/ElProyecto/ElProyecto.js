@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from './ElProyecto.css'
+import styled from 'styled-components'
 
 import Banner from '../UI/Banner/Banner'
 import Title from '../UI/Title/Title'
@@ -189,12 +189,17 @@ class ElProyecto extends Component {
                     imageUrl={card.image}/>
         })
 
+        const TableDisplay = styled.div `
+            display: table-cell;
+            vertical-align: middle;
+        `
+
         return (
-            <div className={classes.ElProyecto}>
-                <Banner bannerStyles={classes.Banner} style={{backgroundImage: `url('${ElProyectoPortada}')`}}>
-                    <div className={classes.TableDisplay}>
-                        <Title titleClass={classes.Title} title={this.state.title}/>
-                    </div>
+            <div>
+                <Banner bannerStyles="el-proyecto">
+                    <TableDisplay>
+                        <Title titleClass="title-el-proyecto" title={this.state.title}/>
+                    </TableDisplay>
                 </Banner>
                 <Tabs>
                     <div label="Etapa 1">
