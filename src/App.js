@@ -14,12 +14,17 @@ import Blog from './components/Blog/Blog'
 import Recursos from './components/Recursos/Recursos'
 import NoMatch from './components/NoMatch/NoMatch'
 
+import MainCrud from './components/CRUD/MainCrud'
+import Edit from './components/CRUD/Edit'
+import Create from './components/CRUD/Create'
+import Show from './components/CRUD/Show'
+
 class App extends Component {
 
     state = {
-        sideDrawerOpen: false
+        sideDrawerOpen: false        
     }
-
+    
     drawerToggleClickHandler = () => {
         this.setState((prevState) => {
             return {sideDrawerOpen: !prevState.sideDrawerOpen}
@@ -58,6 +63,12 @@ class App extends Component {
                         <Route path="/blog" exact component={Blog}/>
                         <Route path="/hitos" exact component={Hitos}/>
                         <Route path="/el-proyecto" exact component={ElProyecto}/>
+
+                        <Route path='/main-crud' component={MainCrud} />
+                        <Route path='/edit/:id' component={Edit} />
+                        <Route path='/create' component={Create} />
+                        <Route path='/show/:id' component={Show} />
+
                         <Route path="/" exact component={Home}/>
                         <Route component={NoMatch}/>
                     </Switch>

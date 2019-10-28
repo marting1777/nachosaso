@@ -6,7 +6,7 @@ import classes from './NavList.css'
 const navList = props => {
     return (
         <li className={classes.NavList}>
-            <NavLink activeStyle={{color: 'orangered'}} to={props.urlLink}>{props.name}</NavLink>
+            <NavLink activeStyle={{color: 'orangered'}} exact to={props.urlLink}>{props.name}</NavLink>
         </li>
     )
 }
