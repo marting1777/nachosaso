@@ -47,6 +47,7 @@ class MainCrud extends Component {
         return (
             <Container>
                 {noticiasList}
+                <Link to="/create">Create New</Link>
             </Container>
         )
     }

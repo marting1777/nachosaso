@@ -30,7 +30,7 @@ class Show extends Component {
     delete(id) {
         firebase.firestore().collection('noticia').doc(id).delete().then(() => {
             console.log('Document successfully deleted!')
-            this.props.history.push('/main-crud')
+            this.props.history.push('/admin')
         })
         .catch(err => {
             console.error('Error removing document: ', err)
@@ -41,10 +41,8 @@ class Show extends Component {
         return (
             <div>
                 <div>
-                    <h4><Link to="/main-crud">Noticia List</Link></h4>
-                    <h3>
-                    {this.state.noticia.title}
-                    </h3>
+                    <h4><Link to="/admin">Noticia List</Link></h4>
+                    <h3>{this.state.noticia.title}</h3>
                 </div>
                 <div>
                     <dl>
@@ -53,8 +51,8 @@ class Show extends Component {
                         <dt>Subtitle:</dt>
                         <dd>{this.state.noticia.subtitle}</dd>
                     </dl>
-                    <Link to={`/edit/${this.state.key}`} class="btn btn-success">Edit</Link>&nbsp;
-                    <button onClick={this.delete.bind(this, this.state.key)} class="btn btn-danger">Delete</button>
+                    <Link to={`/edit/${this.state.key}`}>Edit</Link>&nbsp;
+                    <button onClick={this.delete.bind(this, this.state.key)}>Delete</button>
                 </div>
             </div>
         )

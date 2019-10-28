@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
+import firebase from './Firebase'
+
+import Aux from './hoc/Auxiliar/Auxiliar'
 
 import Navbar from './components/UI/Navbar/Navbar'
 import SideDrawer from './components/UI/SideDrawer/SideDrawer'
@@ -14,6 +17,7 @@ import Blog from './components/Blog/Blog'
 import Recursos from './components/Recursos/Recursos'
 import NoMatch from './components/NoMatch/NoMatch'
 
+import Login from './components/User/Login'
 import MainCrud from './components/CRUD/MainCrud'
 import Edit from './components/CRUD/Edit'
 import Create from './components/CRUD/Create'
@@ -21,8 +25,22 @@ import Show from './components/CRUD/Show'
 
 class App extends Component {
 
-    state = {
-        sideDrawerOpen: false        
+    constructor(props) {
+        super(props)
+        this.state = {
+            user: {},
+            sideDrawerOpen: false        
+        }
+    }
+
+    componentDidMount() {
+        this.authListener()
+    }
+
+    authListener = () => {
+        firebase.auth().onAuthStateChanged(user => {
+            user ? this.setState({ user }) : this.setState({ user: null })
+        })
     }
     
     drawerToggleClickHandler = () => {
@@ -36,7 +54,6 @@ class App extends Component {
     }
 
     render () {
-
         const AppContainer = styled.div `
             font-family: 'Titillium Web', sans-serif;
             height: 100%;
@@ -63,13 +80,18 @@ class App extends Component {
                         <Route path="/blog" exact component={Blog}/>
                         <Route path="/hitos" exact component={Hitos}/>
                         <Route path="/el-proyecto" exact component={ElProyecto}/>
-
-                        <Route path='/main-crud' component={MainCrud} />
-                        <Route path='/edit/:id' component={Edit} />
-                        <Route path='/create' component={Create} />
-                        <Route path='/show/:id' component={Show} />
-
                         <Route path="/" exact component={Home}/>
+
+                        {this.state.user ? (
+                            <Aux>
+                                <Route path='/admin' component={MainCrud} />
+                                <Route path='/edit/:id' component={Edit} />
+                                <Route path='/create' component={Create} />
+                                <Route path='/show/:id' component={Show} />
+                            </Aux>
+                        ) : null}
+                        
+                        <Route path="/login" exact component={Login}/>
                         <Route component={NoMatch}/>
                     </Switch>
                 </AppContainer>

@@ -40,7 +40,7 @@ class Create extends Component {
                 mediaElement: '',
                 body: ''
             })
-            this.props.history.push('/main-crud')
+            this.props.history.push('/admin')
         })
         .catch(err => {
             console.error('Error adding document: ', err)
@@ -52,29 +52,29 @@ class Create extends Component {
         return (
             <div>
                 <h3>Add Noticia</h3>
-                <h4><Link to="/main-crud">Noticias List</Link></h4>
+                <h4><Link to="/admin">Noticias List</Link></h4>
                 <form onSubmit={this.onSubmit}>
                     <div>
-                        <label for="title">Title:</label>
+                        <label htmlFor="title">Title:</label>
                         <input type="text" name="title" value={title} onChange={this.onChange} placeholder="Title" />
                     </div>
                     <div>
-                        <label for="subtitle">Subtitle:</label>
+                        <label htmlFor="subtitle">Subtitle:</label>
                         <input type="text" name="subtitle" value={subtitle} onChange={this.onChange} placeholder="Subtitle" />
                     </div>
                     <div>
-                        <label for="description">Description:</label>
+                        <label htmlFor="description">Description:</label>
                         <textArea name="description" onChange={this.onChange} placeholder="Description" cols="80" rows="3">{description}</textArea>
                     </div>
                     <div>
-                        <label for="mediaElement">Media Element:</label>
+                        <label htmlFor="mediaElement">Media Element:</label>
                         <input type="text" name="mediaElement" value={mediaElement} onChange={this.onChange} placeholder="Media Element" />
                     </div>
                     <div>
-                        <label for="body">Body:</label>
+                        <label htmlFor="body">Body:</label>
                         <textArea name="body" onChange={this.onChange} placeholder="Body" cols="80" rows="3">{body}</textArea>
                     </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         )
