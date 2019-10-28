@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import firebase from '../../Firebase'
 import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
 
 class MainCrud extends Component {
 
@@ -36,18 +37,17 @@ class MainCrud extends Component {
     }
 
     render() {
+        const noticiasList = this.state.noticias.map(noticia => {
+            return  <Paper style={{padding: '10px', margin: '20px 0'}}>
+                        <h3>{noticia.title}</h3>
+                        <td><Link to={`/show/${noticia.key}`}>{noticia.title}</Link></td>
+                    </Paper>
+        })
+
         return (
-            <div>
-                {this.state.noticias.map(noticia => {
-                    return <Paper>
-                                <div>
-                                    <h3>{noticia.title}</h3>
-                                    <td><Link to={`/show/${noticia.key}`}>{noticia.title}</Link></td>
-                                </div>
-                            </Paper>
-                    })
-                }
-            </div>
+            <Container>
+                {noticiasList}
+            </Container>
         )
     }
 }
